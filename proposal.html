@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Proposal</title>
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3e9ff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+  
+    nav {
+      background-color: #333; /* Dark background color */
+      width: 100%;
+      position: fixed;
+      top: 0;
+    }
+  
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+  
+    li {
+      float: left;
+    }
+  
+    li a {
+      display: block;
+      color: #ccc; /* Light gray text color */
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      transition: color 0.3s; /* Smooth color transition on hover */
+    }
+  
+    li a:hover {
+      color: #fff; /* White text color on hover */
+      background-color: #555; /* Darker background color on hover */
+    }
+  
+    .proposal {
+      text-align: center;
+      margin-top: 100px; /* Adjust the margin to position the proposal question */
+    }
+  
+    h1 {
+      font-size: 36px;
+      color: #6c5ce7;
+      margin-bottom: 20px;
+    }
+  
+    button {
+      padding: 15px 30px;
+      border: none;
+      cursor: pointer;
+      border-radius: 25px;
+      font-size: 20px;
+      transition: background-color 0.3s, transform 0.2s;
+      background-color: #6c5ce7;
+      color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  
+    button:hover {
+      background-color: #4834d4;
+      transform: translateY(-2px);
+    }
+  
+    button:active {
+      transform: translateY(0);
+    }
+  
+    button:focus {
+      outline: none;
+    }
+  
+    button::before {
+      content: '\1F495';
+      display: inline-block;
+      margin-right: 10px;
+      font-size: 24px;
+      animation: heartbeat 1.5s infinite;
+    }
+  
+    @keyframes heartbeat {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.2);
+      }
+    }
+  
+    .gif-container {
+      position: absolute;
+      top: 30%;
+      left: 57%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+    }
+  
+    .gif-container img {
+      max-width: 60%;
+      max-height: 50%;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="loveletter.html">Letter</a></li>
+    <li><a href="proposal.html">Proposal</a></li>
+    <li><a href="images.html">Images</a></li>
+  </ul>
+</nav>
+
+<div class="proposal">
+  <h1>Will you be my Valentine?</h1>
+  <button class="yes-btn" onclick="confirmProposal()">Click to Answer</button>
+</div>
+
+<script>
+function confirmProposal() {
+    var response = confirm("Will you be my Valentine?");
+    
+    if (response) {
+
+        var gifContainer = document.createElement('div');
+        gifContainer.classList.add('gif-container');
+
+        var gif = document.createElement('img');
+        gif.src = 'js/image/kiss.gif'; 
+        gif.alt = 'Happy Valentine';
+
+        gifContainer.appendChild(gif);
+
+        document.body.appendChild(gifContainer);
+
+
+        alert("Yay I love Youu!");
+
+       
+    } else {
+        alert("Oks lang :'<");
+    }
+}
+</script>
+
+</body>
+</html>
